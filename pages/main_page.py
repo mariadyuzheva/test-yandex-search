@@ -5,8 +5,10 @@ from pages.locators import MainPageLocators
 class MainPage(BasePage):
     """Главная страница"""
 
+    URL = "https://www.yandex.ru/"
+
     def __init__(self, browser):
-        super().__init__(browser, "https://www.yandex.ru/")
+        super().__init__(browser, self.URL)
 
     def is_search_field_present(self):
         """Проверяет наличие поля поиска"""
@@ -14,7 +16,8 @@ class MainPage(BasePage):
 
     def enter_search_text(self, text):
         """Вводит текст в поле поиска"""
-        self.browser.find_element(*MainPageLocators.SEARCH_FIELD).send_keys(text)
+        self.browser.find_element(
+            *MainPageLocators.SEARCH_FIELD).send_keys(text)
 
     def is_search_suggest_present(self):
         """Проверяет наличие таблицы с подсказками (suggest)"""

@@ -11,6 +11,7 @@ class SearchResultPage(BasePage):
 
     def get_first_link(self):
         """Возвращает ссылку на первый результат поиска"""
-        search_result = self.browser.find_element(*SearchResultPageLocators.SEARCH_RESULT)
+        search_result = self.browser.find_element(
+            *SearchResultPageLocators.SEARCH_RESULT)
         return search_result.find_element(
             *BasePageLocators.FIRST_LINK).get_attribute("href")

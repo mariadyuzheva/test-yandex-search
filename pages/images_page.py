@@ -6,7 +6,10 @@ class ImagesPage(BasePage):
     """Страница с категориями поиска по картинкам"""
 
     def open_first_category_and_get_name(self):
-        """Открывает первую категорию изображений и возвращает название этой категории"""
+        """
+        Открывает первую категорию изображений и
+        возвращает название этой категории
+        """
         first_category = self.browser.find_element(
             *ImagesPageLocators.CATEGORIES).find_element(
             *BasePageLocators.FIRST_LINK)

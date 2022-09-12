@@ -7,11 +7,16 @@ class ImagesSearchResultPage(BasePage):
 
     def find_search_field(self):
         """Находит на странице поле поиска и возвращает его"""
-        return self.browser.find_element(*ImagesSearchResultPageLocators.SEARCH_FIELD)
+        return self.browser.find_element(
+            *ImagesSearchResultPageLocators.SEARCH_FIELD)
 
     def open_first_image(self):
-        """Находит ссылку на первую картинку среди результатов поиска по картинкам и переходит по ней"""
-        self.browser.find_element(*ImagesSearchResultPageLocators.IMAGE_LINK).click()
+        """
+        Находит ссылку на первую картинку среди результатов поиска по картинкам
+        и переходит по ней
+        """
+        self.browser.find_element(
+            *ImagesSearchResultPageLocators.IMAGE_LINK).click()
 
     def get_text_in_search_field(self):
         """Возвращает текст из поля поиска"""
