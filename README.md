@@ -4,7 +4,7 @@
 
 Запуск всех тестов: `pytest tests/`
 
-По умолчанию тесты запускаются в браузере Chrome.
+По умолчанию тесты запускаются в браузере Chrome. <br/>
 Запуск тестов в браузере Firefox: `pytest tests/ --browser_name=firefox`
 
 Запуск с генерацией отчета в формате html: `pytest tests/ --html=report.html`
