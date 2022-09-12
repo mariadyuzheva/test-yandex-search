@@ -6,7 +6,7 @@ class BasePageLocators:
 
 
 class MainPageLocators:
-    SEARCH_FIELD = (By.ID, "text")
+    SEARCH_FIELD = (By.NAME, "text")
     SEARCH_SUGGEST = (By.CLASS_NAME, "mini-suggest__popup")
     IMAGES_LINK = (By.LINK_TEXT, "Картинки")
 

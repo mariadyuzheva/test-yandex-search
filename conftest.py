@@ -18,6 +18,7 @@ def browser(request):
         browser = webdriver.Firefox()
     else:
         raise pytest.UsageError("--browser_name should be chrome or firefox")
+    browser.maximize_window()
     yield browser
     browser.quit()
 

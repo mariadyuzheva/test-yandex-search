@@ -47,7 +47,7 @@ def test_images_search(browser):
         "Ссылка 'Картинки' отсутствует на странице"
     # 3. Кликаем на ссылку
     main_page.click_images_link()
-    browser.switch_to.window(browser.window_handles[-1])
+    main_page.switch_to_last_opened_window()
 
     # 4. Проверить, что перешли на url https://yandex.ru/images/
     assert browser.current_url.startswith("https://yandex.ru/images/"), \

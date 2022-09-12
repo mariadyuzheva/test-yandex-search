@@ -1,4 +1,6 @@
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
 
 
 class BasePage:
@@ -18,3 +20,9 @@ class BasePage:
         except NoSuchElementException:
             return False
         return True
+
+    def switch_to_last_opened_window(self):
+        """Переключается на последнее открытое окно"""
+        self.browser.switch_to.window(self.browser.window_handles[-1])
+        # Для браузера Firefox, иначе current_url имеет значение about:blank
+        WebDriverWait(self.browser, 10).until(EC.url_changes("about:blank"))
